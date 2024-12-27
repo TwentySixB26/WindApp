@@ -4,7 +4,7 @@
 
         {{-- img --}}
         <div class="self-start  max-w-[20%] sm:max-w-[30%]  lg:max-w-[10%] ">
-            <div class="w-[40px] h-[40px] lg:w-[60px] sm:w-[85px] sm:h-[85px] lg:h-[60px] object-center rounded-full  overflow-hidden">
+            <div class="w-[40px] h-[40px] sm:w-[85px] sm:h-[85px]  lg:w-[60px] lg:h-[60px] object-center rounded-full  overflow-hidden">
                 <a href="
                 @if ($status->user->id == auth()->user()->id)
                     /profile
