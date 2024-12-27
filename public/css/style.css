@@ -1,0 +1,76 @@
+/* about us */
+#aboutLeft {
+    visibility: hidden;
+    transform: translate(-500px);
+}
+
+
+.aboutMenu{
+    visibility: hidden;
+    transform: translate(500px);
+}
+
+.aboutMenu:nth-child(3),
+.aboutMenu:nth-child(4){
+    transform: translate(1000px);
+}
+
+
+#aboutLeft.muncul,
+.aboutMenu.muncul {
+    visibility: visible;
+    transform: translate(0px);
+    transition: 1.5s ease;
+}
+
+/* akhir about us  */
+
+
+
+
+
+
+/* fitur 1  */
+#textFitur1{
+    transform: translate(1000px,0px);
+    visibility: hidden;
+}
+
+#imageFitur1{
+    transform: translate(-500px,0px);
+    visibility: hidden;
+}
+
+
+#imageFitur1.muncul , #textFitur1.muncul {
+    transform: translate(0px,0px);
+    visibility: visible;
+    transition: 2.7s ease;
+}
+/* akhir fitur 1  */
+
+
+/* fitur 2  */
+
+#textFitur2{
+    transform: translate(-600px,0px);
+    visibility: hidden;
+}
+
+#imageFitur2{
+    transform: translate(600px,0px);
+    visibility: hidden;
+}
+
+#imageFitur2.muncul , #textFitur2.muncul {
+    transform: translate(0px,0px);
+    visibility: visible;
+    transition: 2.7s ease;
+}
+/* akhir fitur 2 */
+
+
+
+
+
+
