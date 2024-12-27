@@ -30,13 +30,13 @@
 
 
         {{-- status  --}}
+        <div class="mt-24 text-center">
+            <h1 class="font-firaSans text-lg font-medium text-slate-800">All Post</h1>
+        </div>
         @forelse ($statuses->sortByDesc('created_at') as $status)
-            <div class="mt-24 text-center">
-                <h1 class="font-firaSans text-lg font-medium text-slate-800">All Post</h1>
-            </div>
             @include('halamanUtama.tengah.status')
         @empty
-            <div class="mt-24 text-center">
+            <div class="mt-10 text-center border-t-slate-500 border-t">
                 <h1 class="font-firaSans text-center text-xs font-medium text-slate-500 mt-2 ">None Post</h1>
             </div>
         @endforelse

@@ -3,7 +3,7 @@
 @section('content')
 <div class="flex">
     {{-- Left --}}
-    <div class="w-[16%] lg:w-[20%] fixed z-0 border-r border-r-slate-300 h-screen overflow-y-hidden  px-2 lg:px-8">
+    <div class="w-[16%] sm:w-[12%] lg:w-[20%] fixed z-0 border-r border-r-slate-300 h-screen overflow-y-hidden  px-2 lg:px-8">
         <div class="mt-2 flex flex-col content-evenly h-full">
             {{-- logo img --}}
             @include('halamanUtama.left.logo-img')
@@ -22,7 +22,7 @@
 
 
     {{-- Tengah --}}
-    <div class="w-[84%] lg:w-[60%] ml-[16%] lg:ml-[20%] px-2 lg:px-4">
+    <div class="w-[84%] sm:w-[88%] lg:w-[60%] ml-[16%] sm:ml-[12%] lg:ml-[20%] px-2 lg:px-4">
 
         {{-- Other and Following --}}
         @include('halamanUtama.tengah.other-and-following')
