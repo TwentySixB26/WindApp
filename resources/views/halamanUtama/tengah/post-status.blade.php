@@ -1,8 +1,8 @@
-<div class=" mt-12 px-0">
+<div class=" mt-12 px-0 mb-7 sm:mb-0">
     <div class="flex items-center lg:justify-center ">
         {{-- img  --}}
         <div class="self-start max-w-[20%] sm:max-w-[30%]  lg:max-w-[10%] ">
-            <div class="w-[30px] h-[30px] sm:w-[70px] sm:h-[70px] lg:w-[45px] lg:h-[45px] object-center  rounded-full self-start  overflow-hidden">
+            <div class="w-[40px] h-[40px] sm:w-[70px] sm:h-[70px] lg:w-[45px] lg:h-[45px] object-center  rounded-full self-start  overflow-hidden">
                 <img src="/storage/{{ auth()->user()->avatar ?? 'profile/imgDefault.png'}}" alt="" class="">
             </div>
         </div>

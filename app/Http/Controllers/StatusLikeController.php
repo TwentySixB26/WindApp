@@ -7,17 +7,19 @@ use Illuminate\Http\Request;
 
 class StatusLikeController extends Controller
 {
-    public function like(Status $status){
+    public function like(Status $status)
+    {
         $liker = auth()->user();
 
         $liker->likes()->attach($status);
         $redirectUrl = request('redirect', url('/home'));
 
-    return redirect($redirectUrl);
+        return redirect($redirectUrl);
     }
 
 
-    public function unlike(Status $status){
+    public function unlike(Status $status)
+    {
         $liker = auth()->user();
 
         $liker->likes()->detach($status);
