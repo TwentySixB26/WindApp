@@ -30,7 +30,7 @@
     {{-- logo --}}
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 </head>
-<body class="min-h-full overflow-x-hidden max-w-[100vw] bg-white">
+<body class="min-h-full overflow-x-hidden max-w-[100vw] bg-white relative">
     @yield('content')
 
 </body>

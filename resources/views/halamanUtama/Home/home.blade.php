@@ -22,7 +22,7 @@
 
 
     {{-- Tengah --}}
-    <div class="w-[84%] sm:w-[88%] lg:w-[60%] ml-[16%] sm:ml-[12%] lg:ml-[20%] px-2 lg:px-4">
+    <div class="w-[84%] sm:w-[88%] lg:w-[60%] ml-[16%] sm:ml-[12%] lg:ml-[20%] px-2 lg:px-4 ">
 
         {{-- Other and Following --}}
         @include('halamanUtama.tengah.other-and-following')

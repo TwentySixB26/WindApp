@@ -95,7 +95,7 @@ class ProfileController extends Controller
             'name' => 'required|min:2|max:100',
             'username' => 'required|max:60|unique:users,username,' . $user->id,
             'avatar' => 'image|file|max:7168',
-            'bio' => 'max:300'
+            'bio' => 'max:100'
         ]) ;
 
         if (request()->has('avatar')) {
