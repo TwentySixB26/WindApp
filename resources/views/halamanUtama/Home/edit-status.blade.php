@@ -52,7 +52,7 @@
                     <form action="/statuses/{{ $status['id'] }}" method="post" class="w-[95%] lg:w-[90%] mx-0 lg:mx-0">
                         @csrf
                         @method('put')
-                        <textarea id="content" cols="30" rows="10" name="content" class="w-full  h-[40px] sm:h-[60px]  lg:h-[60px] p-2 px-0 border-b border-slate-950  outline-none active:border-b text-[0.69rem] sm:text-lg lg:text-sm resize-none " placeholder="Edit your Status" required maxlength="3100"> {{ $status->content }} </textarea>
+                        <textarea id="content" cols="30" rows="10" name="content" class="w-full  h-[40px] sm:h-[60px]  lg:h-[60px] p-2 px-0 border-b border-slate-950  outline-none active:border-b text-[0.69rem] sm:text-lg lg:text-sm resize-none " placeholder="Edit your Status" required maxlength="3000"> {{ $status->content }} </textarea>
                         <button type="submit" class="w-[24%] sm:w-[17%] lg:w-[12%] h-6 sm:h-9 lg:h-8 bg-teal-800 rounded-lg lg:rounded-xl mt-2 sm:mt-2 lg:mt-2 text-white font-semibold text-[0.6rem] sm:text-sm lg:text-xs"> Update </button>
 
                         {{-- error max status --}}

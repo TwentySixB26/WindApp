@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $allUsers = User::latest()->limit(8)->get() ;
+        $allUsers = User::latest()->limit(7)->get() ;
         View::share('allUsers', $allUsers);
     }
 }

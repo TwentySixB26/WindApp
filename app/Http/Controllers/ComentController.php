@@ -29,22 +29,22 @@ class ComentController extends Controller
      */
     public function store(Status $status)
     {
-        //mendifiniskan table yang ada ditabase
-        $coment = new Coment() ;
 
-        //memasukan id yang coment pada variabel coment
-        $coment->status_id = $status->id ;
+        $validated = request()->validate(
+            [
+                'coment' => 'required|max:1500',
+            ]) ;
 
-        //user id pada tabel yg ada di db diambil dari id user yg sudah login
-        $coment->user_id = auth()->id() ;
+        $validated["user_id"] = auth()->id();
+        $validated["status_id"] = $status->id;
 
-        //memasukan isi coment ke dalam variabel coment yang diambil dari request yang telah diisi pada textarea
-        $coment->coment = request('coment') ;
-
-        //melakukan save atau mengirim data ke database
-        $coment->save() ;
-
-
+        Coment::create(
+            [
+                'coment' => $validated["coment"] ,
+                'status_id' => $validated["status_id"] ,
+                'user_id' =>  $validated["user_id"] ,
+            ]
+        ) ;
 
         return redirect('/statuses' . '/' .$status->id ) ;
     }

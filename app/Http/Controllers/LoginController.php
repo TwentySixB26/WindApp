@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Str;
 
 class LoginController extends Controller
 {
@@ -73,17 +74,24 @@ class LoginController extends Controller
 
             //jika user tidak ada di database
             if (!$user) {
+
+                $user = null;
+                do {
+                    $passwordRandom = Str::random(4) ;
+                    $username = 'user' . Str::random(10); // 6 karakter acak
+                    $user = User::where('username', $username)->first();
+                } while ($user);
+
                 //jika user tidak ada maka akan didaftarkan terlebih dahulu ke dalam database
                 $user = User::create([
                     'name' => $googleUser->name,
                     'email' => $googleUser->email,
-                    'username' => 'user'. $googleUser->id ,
+                    'username' => $username ,
                     'avatar' => 'profile/' . $imageName,
-                    'password' => 'password' . $googleUser->email,
+                    'password' => 'password' . $passwordRandom,
 
                 ]) ;
 
-                $user->username = 'user' . $user->id;
                 $user->save();
             }
 

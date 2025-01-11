@@ -1,9 +1,9 @@
 <div class="mt-11 lg:mt-20 mb-14 ">
         @forelse ($status->coments->sortByDesc('created_at') as $coment)
-            <div class="flex  items-center mb-14 lg:mb-16">
+            <div class="flex  items-center mb-14 sm:mb-24 lg:mb-20 relative  pt-5 sm:pt-0 lg:pt-0 ">
 
                 {{-- img --}}
-                <div class="self-start  max-w-[20%] sm:max-w-[30%]  lg:max-w-[10%]">
+                <div class="self-start  max-w-[20%] sm:max-w-[30%]  lg:max-w-[10%] ">
                     <div class="w-[45px] h-[45px] sm:w-[85px] sm:h-[85px]  lg:w-[60px] lg:h-[60px] object-center rounded-full  overflow-hidden">
                         <img src="/storage/{{ $coment->user->avatar ?? 'profile/imgDefault.png'}}" alt="" class="">
                     </div>
@@ -11,7 +11,7 @@
                 {{-- akhir img --}}
 
                 {{-- username dan tgl  --}}
-                <div class="ms-4 max-w-[75%] lg:max-w-[85%]  me-4 text-[0.65rem] sm:text-base lg:text-xs">
+                <div class="ms-4 max-w-[75%] lg:max-w-[85%]  me-4 text-[0.7rem] sm:text-lg lg:text-sm ">
                     <a href="/profile/{{ $coment->user->username }}" class="font-firaSans text-slate-700  font-medium break-words">{{ $coment->user->name }}</a> |
                     <span class=" font-firaSans text-slate-700"> {{ $coment->created_at->diffForHumans() }}</span>
                     <h1 class="font-firaSans text-slate-800 break-words mt-1 lg:mt-2 ">{{ $coment->coment }}</h1>
@@ -20,7 +20,7 @@
 
                 {{-- delete btn  --}}
                 @if (auth()->user()->id == $coment->user_id)
-                    <div class="ms-auto  self-start place-items-center">
+                    <div class="ms-auto  self-start  absolute top-0 right-0 ">
                         <form action="/statuses/{{ $status->id }}/coment/{{ $coment->id }}" method="post">
                             @method('delete')
                             @csrf

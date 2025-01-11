@@ -8,6 +8,7 @@ use App\Http\Controllers\StatusController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HalamanUtamaController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\StatusLikeController;
 
 /*
@@ -85,3 +86,8 @@ Route::post('/{user}/unfollow',[FollowController::class,'unfollow'])->middleware
 Route::post('/status/{status}/like',[StatusLikeController::class,'like'])->middleware('auth')->name('status.like') ;
 Route::post('/status/{status}/unlike',[StatusLikeController::class,'unlike'])->middleware('auth')->name('status.unlike') ;
 // akhir like
+
+
+
+// search
+Route::get('/search',[SearchController::class,'index'])->name('search') ;

@@ -10,10 +10,10 @@
 
         {{-- username,input post,btn  --}}
         <div class="w-full mt-0">
-            <span class="mx-4 lg:mx-4 font-firaSans text-sm sm:text-lg lg:text-base ">{{ auth()->user()->name }}</span>
+            <span class="mx-4 lg:mx-4 font-firaSans text-sm sm:text-lg lg:text-base ">{{  Str::limit(auth()->user()->name, 20, '...') }}  </span>
             <form action="/statuses" method="post" class="w-[90%] lg:w-[90%] mx-4 lg:mx-4 ">
                 @csrf
-                <textarea id="content" cols="30" rows="10" name="content" class="w-full h-[40px] sm:h-[70px]  lg:h-[60px] p-1 px-0 lg:p-2 lg:px-0 border-b border-slate-950  outline-none active:border-b text-xs sm:text-base lg:text-sm resize-none " placeholder="Have an idea to share?" required maxlength="3100"></textarea>
+                <textarea id="content" cols="30" rows="10" name="content" class="w-full h-[40px] sm:h-[70px]  lg:h-[60px] p-1 px-0 lg:p-2 lg:px-0 border-b border-slate-950  outline-none active:border-b text-xs sm:text-base lg:text-sm resize-none " placeholder="Have an idea to share?" required maxlength="3000">{{ old('content') }}</textarea>
                 <button type="submit" class="w-[24%] sm:w-[17%] lg:w-[12%] h-6 sm:h-9 lg:h-8 bg-teal-800 rounded-lg lg:rounded-xl mt-1 lg:mt-2 text-white font-semibold text-[0.6rem] sm:text-sm lg:text-xs"> Share </button>
 
 
@@ -31,4 +31,3 @@
     </div>
 
 </div>
-

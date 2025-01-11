@@ -1,11 +1,13 @@
 {{-- profile --}}
-<a href="/profile" class="w-full flex items-center justify-center lg:justify-start mt-auto ">
-    <div class="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[40px] lg:h-[40px] object-center rounded-full  overflow-hidden">
-        <img src="/storage/{{ auth()->user()->avatar ?? 'profile/imgDefault.png'}}" alt="" class="" alt="Profile-user" title="profile-users">\
-    </div>
-    <span class="hidden lg:inline-block ms-4 text-base font-firaSans  text-slate-950 {{ Request::is('profile') ? 'font-semibold' : 'font-normal' }}">Profile</span>
+<div class="w-full flex items-center justify-center lg:justify-start mt-auto">
+    <a href="/profile" class=" ">
+        <div class="w-[40px] h-[40px] sm:w-[60px] sm:h-[60px] lg:w-[40px] lg:h-[40px] object-center rounded-full  overflow-hidden ">
+            <img src="/storage/{{ auth()->user()->avatar ?? 'profile/imgDefault.png'}}" alt="" class="w-full" >
+        </div>
         {{-- <img src="storage/{{ auth()->user()->avatar ?? 'profile/jessi.jpg'}}" alt="wind-app" title="logo-windApp" class="w-[35px] h-[35px] object-cover rounded-full"><span class="ms-4 text-base font-firaSans font-normal text-slate-950">Profile</span> --}}
-</a>
+    </a>
+    <span class="hidden lg:inline-block ms-4 text-base font-firaSans  text-slate-950 {{ Request::is('profile') ? 'font-semibold' : 'font-normal' }}"><a href="/profile">Profile</a></span>
+</div>
 {{-- akhir profile --}}
 
 {{-- logout --}}
@@ -20,4 +22,5 @@
     </form>
 </div>
 {{-- akhir logout  --}}
+
 

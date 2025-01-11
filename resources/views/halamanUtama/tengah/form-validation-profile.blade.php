@@ -41,7 +41,7 @@
                 <div class="sm:col-span-3">
                     <label for="Username" class="block text-sm font-medium text-gray-900 italic">Username : </label>
                     <div class="mt-2 ">
-                        <input type="text" maxlength="70" placeholder="Username" name="username" id="username" autocomplete="given-name" class="w-full h-[40px] p-6 px-0 border-b border-slate-950  outline-none active:border-b text-sm resize-none placeholder:text-sm" value="{{ old('username',$user->username) }}">
+                        <input type="text" maxlength="20" placeholder="Username" name="username" id="username" autocomplete="given-name" class="w-full h-[40px] p-6 px-0 border-b border-slate-950  outline-none active:border-b text-sm resize-none placeholder:text-sm" value="{{ old('username',$user->username) }}">
                     </div>
                     @error('username')
                         <div class="mt-2 text-xs  text-red-500">
@@ -55,7 +55,7 @@
                 <div class="sm:col-span-3">
                     <label for="Name" class="block text-sm font-medium text-gray-900 italic">Name : </label>
                     <div class="mt-2">
-                        <input type="text" maxlength="110" placeholder="name" name="name" id="name" autocomplete="given-name" class="w-full h-[40px] p-6 px-0 border-b border-slate-950  outline-none active:border-b text-sm resize-none placeholder:text-sm" value="{{ old('name',$user->name) }}">
+                        <input type="text" maxlength="30" placeholder="name" name="name" id="name" autocomplete="given-name" class="w-full h-[40px] p-6 px-0 border-b border-slate-950  outline-none active:border-b text-sm resize-none placeholder:text-sm" value="{{ old('name',$user->name) }}">
                     </div>
                     @error('name')
                         <div class="mt-2 text-xs  text-red-500">
@@ -71,7 +71,7 @@
                     <div class="col-span-full">
                         <label for="bio" class="block text-sm font-medium text-gray-900 italic">Bio :</label>
                         <div class="mt-2">
-                            <textarea id="bio" maxlength="310" cols="30" rows="10" name="bio" class="w-full  h-[60px] py-2 px-0 border-b border-slate-950  outline-none active:border-b text-sm resize-none " required> {{ old('bio',$user->bio) }} </textarea>
+                            <textarea id="bio" maxlength="250" cols="30" rows="10" name="bio" class="w-full  h-[60px] py-2 px-0 border-b border-slate-950  outline-none active:border-b text-sm resize-none " required> {{ old('bio',$user->bio) }} </textarea>
                         </div>
                         @error('bio')
                             <div class="mt-2 text-xs  text-red-500">

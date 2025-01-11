@@ -95,18 +95,18 @@
 
     {{-- username --}}
     @if (auth()->user()->id == $user->id )
-        <h1 class="font-firaSans  break-words  text-xs sm:text-lg lg:text-sm text-slate-900">{{ Str::limit(auth()->user()->name, 30, '...') }}</h1>
+        <h1 class="font-firaSans italic break-words  text-xs sm:text-lg lg:text-sm text-slate-900 mb-1">{{ Str::limit(auth()->user()->name, 30, '...') }}</h1>
     @else
-        <h1 class="font-firaSans break-words  text-xs sm:text-lg lg:text-sm text-slate-900">{{ Str::limit($user->name, 30, '...') }}</h1>
+        <h1 class="font-firaSans italic break-words  text-xs sm:text-lg lg:text-sm text-slate-900 mb-1">{{ Str::limit($user->name, 30, '...') }}</h1>
     @endif
     {{-- akhir username --}}
 
 
     {{-- bio --}}
     @if (auth()->user()->id == $user->id )
-        <h1 class="break-words text-[0.63rem] sm:text-[0.95rem] lg:text-[0.8rem]  text-slate-900">{{ auth()->user()->bio ?? '' }}</h1>
+        <h1 class="break-words text-[0.63rem] sm:text-[0.95rem] lg:text-[0.75rem]  text-slate-900">{{ auth()->user()->bio ?? '' }}</h1>
     @else
-        <h1 class="break-words text-[0.63rem] sm:text-[0.95rem] lg:text-[0.8rem]  text-slate-900">{{ $user->bio ?? '' }}</h1>
+        <h1 class="break-words text-[0.63rem] sm:text-[0.95rem] lg:text-[0.75rem]  text-slate-900">{{ $user->bio ?? '' }}</h1>
     @endif
     {{-- akhir bio --}}
 

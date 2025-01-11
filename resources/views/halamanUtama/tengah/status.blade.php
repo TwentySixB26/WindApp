@@ -1,4 +1,4 @@
-<div class=" {{ Request::is('profile') ? 'mt-5 border-y border-y-slate-200' : 'mt-4 sm:mt-12 lg:mt-16 border-y border-y-slate-200' }}  py-5 px-0 ">
+<div class=" {{ Request::is('profile') ? 'mt-5 border-y border-y-slate-200' : 'mt-4 sm:mt-12 lg:mt-16 border-y border-y-slate-200' }}  py-5 px-0 sm:px-5 lg:px-0 ">
     {{-- profile,username,tgl delete --}}
     <div class="flex  items-center relative ">
 
@@ -18,7 +18,7 @@
         {{-- akhir img --}}
 
         {{-- username dan tgl  --}}
-        <div class="ms-3 sm:ms-3 lg:ms-4 max-w-[80%] lg:max-w-[85%] me-2 lg:me-4">
+        <div class="ms-3 sm:ms-5 lg:ms-4 max-w-[80%] lg:max-w-[85%] me-2 lg:me-4">
             <h1 class="font-firaSans text-slate-900 text-xs sm:text-xl lg:text-base font-medium break-words mb-1 sm:mb-2 lg:mb-1">
                 <a href="
                 @if ($status->user->id == auth()->user()->id)
@@ -26,7 +26,7 @@
                 @else
                     /profile/{{ $status->user->username }}
                 @endif">
-                    {{ $status->user->name }}
+                    {{ Str::limit($status->user->name, 20, '...') }}
                 </a>
             </h1>
             <p class="text-[0.53rem] sm:text-base lg:text-xs  text-slate-500">

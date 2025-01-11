@@ -92,10 +92,10 @@ class ProfileController extends Controller
         }
 
         $validated = request()->validate([
-            'name' => 'required|min:2|max:100',
-            'username' => 'required|max:60|unique:users,username,' . $user->id,
+            'name' => 'required|min:2|max:30',
+            'username' => 'required|max:20|unique:users,username,' . $user->id,
             'avatar' => 'image|file|max:7168',
-            'bio' => 'max:100'
+            'bio' => 'max:200'
         ]) ;
 
         if (request()->has('avatar')) {
