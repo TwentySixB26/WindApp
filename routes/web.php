@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ComentController;
 use App\Http\Controllers\FollowController;
+use App\Http\Controllers\FollowingController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
@@ -91,3 +92,7 @@ Route::post('/status/{status}/unlike',[StatusLikeController::class,'unlike'])->m
 
 // search
 Route::get('/search',[SearchController::class,'index'])->name('search') ;
+
+
+// following
+Route::get('/following',[FollowingController::class,'index'])->name('following') ;
